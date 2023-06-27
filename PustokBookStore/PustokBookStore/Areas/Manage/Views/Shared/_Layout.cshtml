@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="~/manage/assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css">
 
 </head>
 
@@ -360,15 +361,10 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/manage/assets/js/sb-admin-2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="~/manage/assets/js/main.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="~/manage/assets/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="~/manage/assets/js/demo/chart-area-demo.js"></script>
-    <script src="~/manage/assets/js/demo/chart-pie-demo.js"></script>
+    @RenderSection("Scripts", required: false);
 
 </body>
 

@@ -2,7 +2,7 @@
 {
     public class PaginatedList<T>
     {
-        public PaginatedList(List<T> items, int totalPages, int pageIndex)
+        public PaginatedList(List<T> items, int pageIndex, int totalPages)
         {
             Items = items;
             TotalPages = totalPages;
@@ -18,7 +18,7 @@
         {
             var items = query.Skip((pageIndex - 1)*pageSize).Take(pageSize).ToList();
             var totalPages = (int)Math.Ceiling(query.Count() / (double)pageSize);
-            return new PaginatedList<T>(items, totalPages, pageIndex);
+            return new PaginatedList<T>(items, pageIndex, totalPages);
         }
     }
 }

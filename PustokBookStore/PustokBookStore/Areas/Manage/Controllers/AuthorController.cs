@@ -17,7 +17,7 @@ namespace PustokBookStore.Areas.Manage.Controllers
         }
         public IActionResult Index(int page = 1)
         {
-            var query = _context.Authors.Include(x=>x.Books).AsQueryable();
+            var query = _context.Authors.Include(x => x.Books);
 
             var model = PaginatedList<Author>.Create(query, page, 2);
 
@@ -78,6 +78,26 @@ namespace PustokBookStore.Areas.Manage.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+
+        public IActionResult Delete(int id)
+        {
+            Author author = _context.Authors.Include(x => x.Books).FirstOrDefault(x => x.Id == id);
+            if (author == null) return View("Error");
+            return View(author);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Author author)
+        {
+            Author existAuthor = _context.Authors.Find(author.Id);
+            if (existAuthor == null) return View("Error");
+
+            _context.Authors.Remove(existAuthor);
+            _context.SaveChanges();
+
+            return RedirectToAction("index");
         }
     }
 }

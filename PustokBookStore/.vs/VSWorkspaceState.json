@@ -12,6 +12,6 @@
     "\\PustokBookStore\\wwwroot\\assets",
     "\\PustokBookStore\\wwwroot\\assets\\js"
   ],
-  "SelectedNode": "\\PustokBookStore.sln",
+  "SelectedNode": "\\PustokBookStore\\Areas\\Manage\\Controllers\\SliderController.cs",
   "PreviewInSolutionExplorer": false
 }

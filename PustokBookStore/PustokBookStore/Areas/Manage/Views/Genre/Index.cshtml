@@ -44,7 +44,7 @@
         <td>@item.Books.Count</td>
         <td>
             <a class="btn btn-warning" asp-action="edit" asp-route-id="@item.Id">Edit</a>
-            <a class="btn btn-danger">Delete</a>
+            <a class="btn btn-danger delete-btn" asp-action="delete" asp-route-id="@item.Id">Delete</a>
         </td>
     </tr>
     }
@@ -57,7 +57,7 @@
       <span class="page-link">Previous</span>
     </li>
 
-        @for (int i = 1; i < Model.TotalPages; i++)
+        @for (int i = 1; i <= Model.TotalPages; i++)
         {
             <li class="page-item @(Model.PageIndex == i ? "active" : "")"><a class="page-link" asp-route-search="@ViewBag.Search" asp-route-page="@i">@i</a></li>
         }
@@ -70,3 +70,8 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+
+}

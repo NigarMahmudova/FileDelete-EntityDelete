@@ -91,5 +91,16 @@ namespace PustokBookStore.Areas.Manage.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            Genre genre = _context.Genres.Find(id);
+            if(genre == null) return StatusCode(404);
+
+            _context.Genres.Remove(genre);
+            _context.SaveChanges();
+
+            return StatusCode(200);
+        }
     }
 }
